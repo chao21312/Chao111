@@ -1,0 +1,10 @@
+[Unit]
+Description=vsftpd FTP server
+After=network.target
+ 
+[Service]
+ExecStart=/usr/local/sbin/vsftpd /etc/vsftpd.conf
+ExecReload=/bin/kill -HUP $MAINPID
+ 
+[Install]
+WantedBy=multi-user.target
